@@ -1,6 +1,6 @@
 user:
   outputs:
-    default:
+    dev:
       account: ZWTCNXU-VWB00787
       auth_type: keypair
       client_session_keep_alive: false
@@ -15,5 +15,7 @@ user:
       threads: 6
       type: snowflake
       user: poojawayal
-      warehouse: compute_wh
-  target: default
+      warehouse: compute_wh   
+  target: dev
+
+

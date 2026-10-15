@@ -6,7 +6,7 @@ version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'dbt_capstone_project'
+profile: 'user'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -51,7 +51,12 @@ models:
       +materialized: table
     src: 
       +materialized: ephemeral
+    fct:
+      +tags: ['fact']
+
+vars: 
+  user_name: "{{ env_var('DBT_USER_NAME', 'default_user_name') }}"
 
 data_tests:
-  # +store_failures: true
+  +store_failures: true
   +schema: _test_failures    
